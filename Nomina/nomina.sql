@@ -178,3 +178,46 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+--Tablas Nominas 01
+
+CREATE TABLE "cAreaGeografica" (
+	"AreaGeografica"	INT,
+	"Clave"	VARCHAR(10) NOT NULL,
+	"Descripcion"	VARCHAR(50) NOT NULL,
+	"Estatus"	VARCHAR(1) NOT NULL,
+	PRIMARY KEY("AreaGeografica")
+);
+
+
+CREATE TABLE "cSatBancos" (
+	"Banco"	INT,
+	"ClaveSAT"	VARCHAR(5) NOT NULL,
+	"DescripcionSAT"	VARCHAR(40) NOT NULL,
+	"RazonSocialSAT"	VARCHAR(120) NOT NULL,
+	"FechaInicioVigenciaSAT"	DATETIME,
+	"FechaFinVigenciaSAT"	DATETIME,
+	"ClaveABM"	INT NOT NULL,
+	"Estatus"	VARCHAR(1) NOT NULL,
+	PRIMARY KEY("Banco")
+);
+
+CREATE TABLE "cBaseCotizacion" (
+	"BaseCotizacion"	INT,
+	"Descripcion"	VARCHAR(20) NOT NULL,
+	"Estatus"	VARCHAR(1) NOT NULL,
+	PRIMARY KEY("BaseCotizacion")
+);
+
+--Creacion de tabla cCategoria pendiente a creacion de fk Empresa 
+
+CREATE TABLE "cSatRiesgoPuesto" (
+	"RiesgoPuesto"	INT,
+	"ClaveSAT"	VARCHAR(5) NOT NULL,
+	"Descripcion"	VARCHAR(20) NOT NULL,
+	"FechaInicioVigencia"	DATETIME,
+	"FechaFinVigencia"	DATETIME,
+	"Estatus"	VARCHAR(1) NOT NULL,
+	PRIMARY KEY("RiesgoPuesto")
+);
